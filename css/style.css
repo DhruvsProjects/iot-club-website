@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #a855f7;
+}
+
 body {
     background: #0a0118;
     /* This creates the luxury "glowing" effect in the background */
@@ -77,14 +83,14 @@ body {
 
 /* The Neon Title Effect */
 .neon-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
     text-transform: uppercase;
-    font-size: 3.5rem;
+    letter-spacing: 0.2em; /* The "Brand" wide look */
     color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #ff00ff, 0 0 21px #ff00ff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #ff00ff, 0 0 21px #ff00ff; /* The Neon Glow */
     text-align: center;
-    margin: 50px 0;
 }
-
 /* The Team Member Cards */
 .member-card {
     background: rgba(45, 10, 58, 0.8); /* Semi-transparent dark purple */
@@ -138,10 +144,14 @@ body {
 
 /* Typography refinements */
 .text-side h2 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 900;
-    letter-spacing: -2px; /* Tight luxury spacing */
-    margin-bottom: 20px;
+    letter-spacing: -2px; /* The "Tight" luxury look */
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, #94a3b8); /* Gradient Text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
 }
 
 .text-side p {
@@ -156,4 +166,20 @@ body {
 .gradient-box {
     background: linear-gradient(45deg, #ff004c, #5500ff, #00d4ff);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+/* Scoped styles for the Blogs page to ensure text readability */
+#blog-page .text-side h2 {
+    font-size: 3rem; /* Adjusted for longer blog titles */
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+#blog-page .text-side p {
+    text-transform: none; /* Blogs need standard case for long reading */
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+#blog-page .info-block {
+    border-bottom: 1px solid rgba(168, 85, 247, 0.1); /* Subtle divider between posts */
 }
